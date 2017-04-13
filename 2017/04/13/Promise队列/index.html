@@ -5,17 +5,17 @@
   
   <title>RSVP-Promise队列 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.RenderJS 是异步的js库，并且通过RSVP.js使用了promises特性 \2.Nexedi定制的RSVP.js添加了RSVP.Queue()方法，而不是使用RSVP.js原生的.then()方法去连接promises \3.这些promise队列是可以被取消的promises队列，通过如下方式: \    new RSVP.Queue().push(onFulfilled, onR">
+  <meta name="description" content="1.RenderJS 是异步的js库，并且通过RSVP.js使用了promises特性 2.Nexedi定制的RSVP.js添加了RSVP.Queue()方法，而不是使用RSVP.js原生的.then()方法去连接promises 3.这些promise队列是可以被取消的promises队列，通过如下方式: 1new RSVP.Queue().push(onFulfilled, onRejecte">
 <meta name="keywords" content="tech">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RSVP-Promise队列">
 <meta property="og:url" content="http://yoursite.com/2017/04/13/Promise队列/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.RenderJS 是异步的js库，并且通过RSVP.js使用了promises特性 \2.Nexedi定制的RSVP.js添加了RSVP.Queue()方法，而不是使用RSVP.js原生的.then()方法去连接promises \3.这些promise队列是可以被取消的promises队列，通过如下方式: \    new RSVP.Queue().push(onFulfilled, onR">
-<meta property="og:updated_time" content="2017-04-13T15:24:35.174Z">
+<meta property="og:description" content="1.RenderJS 是异步的js库，并且通过RSVP.js使用了promises特性 2.Nexedi定制的RSVP.js添加了RSVP.Queue()方法，而不是使用RSVP.js原生的.then()方法去连接promises 3.这些promise队列是可以被取消的promises队列，通过如下方式: 1new RSVP.Queue().push(onFulfilled, onRejecte">
+<meta property="og:updated_time" content="2017-04-13T15:39:55.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSVP-Promise队列">
-<meta name="twitter:description" content="1.RenderJS 是异步的js库，并且通过RSVP.js使用了promises特性 \2.Nexedi定制的RSVP.js添加了RSVP.Queue()方法，而不是使用RSVP.js原生的.then()方法去连接promises \3.这些promise队列是可以被取消的promises队列，通过如下方式: \    new RSVP.Queue().push(onFulfilled, onR">
+<meta name="twitter:description" content="1.RenderJS 是异步的js库，并且通过RSVP.js使用了promises特性 2.Nexedi定制的RSVP.js添加了RSVP.Queue()方法，而不是使用RSVP.js原生的.then()方法去连接promises 3.这些promise队列是可以被取消的promises队列，通过如下方式: 1new RSVP.Queue().push(onFulfilled, onRejecte">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -53,9 +53,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -86,12 +86,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.RenderJS 是异步的js库，并且通过RSVP.js使用了promises特性 \<br>2.Nexedi定制的RSVP.js添加了RSVP.Queue()方法，而不是使用RSVP.js原生的.then()方法去连接promises \<br>3.这些promise队列是可以被取消的promises队列，通过如下方式: \<br>    new RSVP.Queue().push(onFulfilled, onRejected).push(onFulfilled, onRejected)</p>
+        <p>1.RenderJS 是异步的js库，并且通过RSVP.js使用了promises特性</p>
+<p>2.Nexedi定制的RSVP.js添加了RSVP.Queue()方法，而不是使用RSVP.js原生的.then()方法去连接promises</p>
+<p>3.这些promise队列是可以被取消的promises队列，通过如下方式:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new RSVP.Queue().push(onFulfilled, onRejected).push(onFulfilled, onRejected)</div></pre></td></tr></table></figure>
+<p>4.Gadget方法通常返回promises队列，让你能调用addTtem()</p>
+<p>5.作为RenderJS的一个方法，changeState()也返回promise队列。为了解决上一小节遗留下的那个bug,<br>  你可以在这章中寻找有关promise队列的解决方案。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/13/Promise队列/" data-id="cj1gk0uf70000u4qtxk2mk867" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/13/Promise队列/" data-id="cj1gknihm000168qt846ul4yy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
@@ -103,7 +108,7 @@
 <nav id="article-nav">
   
     <a href="/2017/04/12/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           Hello World
@@ -126,7 +131,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech/">tech</a></li></ul>
     </div>
@@ -136,7 +141,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/tech/" style="font-size: 10px;">tech</a>
     </div>
@@ -155,7 +160,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -180,7 +185,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
